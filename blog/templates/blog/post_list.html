@@ -7,16 +7,12 @@
             <h1><a href="/">TeleJ's Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 14AUG2019</p>
-            <h2><a href="">My first post</a></h2>
-            <p>This is my first post on the blog!</p>
-        </div>
-
-        <div>
-            <p>published: 14AUG2019</p>
-            <h2><a href="">My second post</a></h2>
-            <p>This is my second post on the blog! Woot!</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
